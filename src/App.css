@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
-}
+:root {
+  /* colors */
+  --clr-blue: #168fe0;
+  --clr-yellow: #ffcd00;
+  --clr-pink: #ff008c;
+  --clr-green: #00c456;
+  --clr-dark: #14213d;
+  --clr-light: #EFEDED;
+  /* --clr-light: #14213d;
+  --clr-dark: #fff; */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  /* font families */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Lexend", sans-serif;
+  --ff-title: "Pacifico", cursive;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  /* font weights */
+  --fw-reg: 300;
+  --fw-md: 500;
+  --fw-bold: 900;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* font sizes */
+  --fs-h1: 3rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-md: 0.6rem;
+  /* box shadow */
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  --bs-1: 0.25em 0.25em 0em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  /* border radius */
+  --br-10: 10px;
+  --br-15: 15px;
+  --br-20: 20px;
+  --br-25: 25px;
+  --br-50p: 50%;
+
+  --ff-primary: "Ubuntu", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-secondary);
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--clr-light);
+}
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+header h1 {
+  margin-left: 15px;
+  font-size: 1.6rem;
+  font-family: var(--ff-title);
+}
+.nav {
+  box-shadow: z;
+}
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+.sidebar {
+  width: 25%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 70px 40px;
+}
+.sidebar .titre h1 {
+  font-size: var(--fs-h3);
+  color: #717173;
+  margin-bottom: 30px;
+}
+.inline-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 20px 50px;
+}
+.inline-form .submit{
+  border: none;
+  outline: none;
+  font-size: var(--fs-h3);
+  font-family: var(--ff-primary);
+  background-color: var(--clr-blue);
+  color: white;
+  border-radius: var(--br-10);
+  padding: 10px;
+  border: 1px solid var(--clr-light);
+  box-shadow:  1.25px 1.25px 2px rgb(0 0 0 / 7%), -2.875px -0.875px 7.25px rgb(0 0 0 / 5%);
+  cursor: pointer;
+}
+.my-input {
+  border: none;
+  outline: none;
+  font-size: var(--fs-h3);
+  font-family: var(--ff-primary);
+  background-color: white;
+  border-radius: var(--br-10);
+  padding: 10px;
+  border: 1px solid var(--clr-light);
+  box-shadow:  1.25px 1.25px 2px rgb(0 0 0 / 7%), -2.875px -0.875px 7.25px rgb(0 0 0 / 5%);
+}
+
+.sidebar .list-item {
+  display: flex;
+  align-items: center;
+}
+.sidebar .list-item .icon {
+  height: 50px;
+  width: 50px;
+  background-color: var(--clr-blue);
+  border-radius: var(--br-10);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.sidebar .list-item .icon:nth-child(1) {
+  background-color: var(--clr-blue);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-container {
+  --text-padding: 20px;
+  padding: 50px;
+}
+.title-container,
+.title-container .left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-container .left h1 {
+  font-size: var(--fs-h2);
+  margin-left: var(--text-padding);
+  color: var(--clr-blue);
+}
+.title-container .left h2 {
+  font-size: var(--fs-body);
+  margin-left: var(--text-padding);
+  color: #656567;
+}
+.title-container img {
+  height: 70px;
+}
+.card{
+ background-color: white; 
+ margin: 50px;
+ box-shadow: var(--bs);
+ border-radius: var(--br-15);
+}
+.table-container{
+  padding-inline: 50px;
+  padding-bottom: 50px;
+}
+.table-container table{
+  width: 100%;
+ 
+}
+.table-container table td{
+  font-family: var(--ff-primary);
+  padding: 10px 30px;
+}
+.table-container table th{
+  font-weight: var(--fw-bold);
+  font-weight: var(--fw-reg);
+  text-align: left;
+  padding: 20px;
+}
+.table-container.scrollable{
+  overflow: scroll;
+  max-height: 450px;
+}
+.table-container.graph{
+  height: 400px;
+}
+.graph-placeholder{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-primary);
 }
